@@ -1,4 +1,4 @@
-# QR App Generator
+# QR Generator Tool
 
 This is a QR app generator that allows you to easily create QR codes for various purposes.
 
