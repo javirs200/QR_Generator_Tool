@@ -5,15 +5,46 @@ function calculateQRSize() {
     return qrSize;
 }
 
-$('#generate-button').click(function () {
+// Set default values
+let defaultSize = 128;
+let defaultBackgroundColor = '#ffffff';
+let defaultBorderStyle = 'solid';
+let defaultBorderColor = '#55d7fb';
+let defaultBorderRadius = 20;
+let defaultBorderWidth = 2;
+
+// Set default values in settings
+$('#size').val(defaultSize);
+$('#background-color').val(defaultBackgroundColor);
+$('#border-style').val(defaultBorderStyle);
+$('#border-color').val(defaultBorderColor);
+$('#border-radius').val(defaultBorderRadius);
+$('#border-width').val(defaultBorderWidth);
+
+$('#generate-button').click(function() {
     let text = $('#text-input').val();
+    let size = $('#size').val();
+    let backgroundColor = $('#background-color').val();
+    let borderStyle = $('#border-style').val();
+    let borderColor = $('#border-color').val();
+    let borderRadius = $('#border-radius').val();
+    let borderWidth = $('#border-width').val();
+
     $('#qrcode').empty();
-    let qrSize = calculateQRSize();
+    $('#qrcode').css({
+        'background-color': backgroundColor,
+        'border-style': borderStyle,
+        'border-color': borderColor,
+        'border-radius': borderRadius + 'px',
+        'border-width': borderWidth + 'px'
+    });
+
     let qrcode = new QRCode(document.getElementById("qrcode"), {
         text: text,
-        width: qrSize,
-        height: qrSize
+        width: size,
+        height: size
     });
+
     $('#download-button').show();
 });
 
@@ -27,4 +58,8 @@ $('#download-button').click(function () {
         link.href = img;
         link.click();
     });
+});
+
+$('#toggle-settings').click(function() {
+    $('#settings').toggle();
 });

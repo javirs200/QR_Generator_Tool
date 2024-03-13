@@ -1,12 +1,35 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>QR Code Generator</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
+
 <body>
     <h1>QR Code Generator</h1>
     <input id="text-input" type="text" placeholder="Enter text for QR code">
+    <button id="toggle-settings">Toggle Settings</button>
+    <div id="settings" style="display: none;">
+        <h2>Settings</h2>
+        <label for="size">Size:</label>
+        <input id="size" type="number" value="128">
+        <label for="background-color">Background Color:</label>
+        <input id="background-color" type="color" value="#ffffff">
+        <label for="border-style">Border Style:</label>
+        <select id="border-style">
+            <option value="solid">Solid</option>
+            <option value="dotted">Dotted</option>
+            <option value="dashed">Dashed</option>
+            <option value="none">None</option>
+        </select>
+        <label for="border-color">Border Color:</label>
+        <input id="border-color" type="color" value="#000000">
+        <label for="border-radius">Border Radius:</label>
+        <input id="border-radius" type="number" value="0">
+        <label for="border-width">Border Width:</label>
+        <input id="border-width" type="number" value="0">
+    </div>
     <button id="generate-button">Generate QR Code</button>
     <div id="qrcode"></div>
     <button id="download-button" style="display: none;">Download QR Code</button>
@@ -16,4 +39,5 @@
     <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
     <script src="script.js"></script>
 </body>
+
 </html>
