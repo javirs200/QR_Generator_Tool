@@ -12,6 +12,7 @@ This is a QR app generator that allows you to easily create QR codes for various
 
 1. Open the [QR app generator](https://javirs200.github.io/QR_Generator_Tool/) in your web browser.
 2. Enter the desired content for the QR code.
+3. (Optional) adjust settings for syles
 4. Click the "Generate" button to create the QR code.
 5. Download the QR code as an image file.
 
