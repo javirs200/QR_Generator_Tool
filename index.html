@@ -38,6 +38,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.min.js"></script>
     <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
     <script src="script.js"></script>
+    <script> 
+        // Default QR Code for static page
+        const defaultQRCode = new QRCode(document.getElementById("qrcode"), {
+            text: 'https://github.com/javirs200',
+            width: 512,
+            height: 512
+        });
+    </script>
 </body>
 
 </html>
